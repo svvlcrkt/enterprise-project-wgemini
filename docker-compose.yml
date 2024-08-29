@@ -1,0 +1,14 @@
+services:
+  fastapi-app:
+    build: .
+    ports:
+      - "8000:8000"
+    depends_on:
+      - redis
+  celery-worker:
+    build: .
+    command: celery -A celery_worker worker --loglevel=info
+    depends_on:
+      - redis
+  redis:
+    image: "redis:alpine"
