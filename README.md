@@ -11,9 +11,6 @@ Ayrıca proje Docker kullanarak geliştirilmiş ve çalıştırılmıştır.
 ### Gereksinimler
 ### Kurulum
 ### Kullanım
-### Sürüm Bilgileri
-### Yardım ve Destek
-### Proje Açıklaması
 
 ## Gereksinimler
 ### Bu projeyi çalıştırmak için aşağıdaki yazılımların kurulu olması gerekmektedir:
