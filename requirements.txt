@@ -4,3 +4,6 @@ celery
 redis
 requests
 beautifulsoup4
+pandas
+scikit-learn
+google-generativeai

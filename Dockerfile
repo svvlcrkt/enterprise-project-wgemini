@@ -13,3 +13,5 @@ COPY . .
 
 # FastAPI için uvicorn çalıştırma komutu
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+
+RUN pip install google-generativeai
