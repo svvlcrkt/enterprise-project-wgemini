@@ -3,7 +3,7 @@ Bu proje, FastAPI, Celery, Redis, Google Gemini API ve diğer teknolojiler kulla
 işleme ve analiz işlemleri gerçekleştiren bir uygulamadır. Uygulama https://ranking.glassdollar.com/ sitesi üzerinden 
 belirli verileri toplar ve sonrasında bunları json'a çevirir. Daha sonra bu bilgileri descriptiona göre gruplayarak
 GEmini'ye verir ve ondan title ve summary alır. En son da önce tüm enterprise bilgilerini ve dah sonra detaylı
-şekilde cluster_id, title, summary ve enterprise bilgilerini dömndürür.
+şekilde cluster_id, title, summary ve enterprise bilgilerini döndürür.
 Ayrıca proje Docker kullanarak geliştirilmiş ve çalıştırılmıştır.
 
 ## İçindekiler
