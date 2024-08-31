@@ -60,6 +60,8 @@ docker-compose up
 ```bash
 docker-compose run --rm celery-worker
 ```
-## Web API'yi Erişme: FastAPI web uygulamasına tarayıcınızdan http://localhost:8000 adresinden erişebilirsiniz.
+### Web API'yi Erişme: 
+FastAPI web uygulamasına tarayıcınızdan http://localhost:8000 adresinden erişebilirsiniz.
 
-## Görevleri Çalıştırma: scrape_and_process görevini çalıştırmak için Celery görev kuyruğuna gönderebilirsiniz.
+### Görevleri Çalıştırma: 
+Scrape_and_process görevini çalıştırmak için Celery görev kuyruğuna gönderebilirsiniz.
