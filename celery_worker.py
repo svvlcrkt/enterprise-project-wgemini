@@ -12,7 +12,7 @@ logger = logging.getLogger(__name__)
 app = Celery('tasks', broker='redis://redis:6379/0')
 
 # Google Gemini API anahtarınızı ayarlayın
-genai.configure(api_key="AIzaSyDZEnE3Q6xACtPQEjBxtsy7X_N2BwqTZ4U")
+genai.configure(api_key="API_KEY")
 
 @app.task
 def scrape_and_process():
