@@ -5,6 +5,7 @@ import logging
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.cluster import KMeans
 import google.generativeai as genai
+from sklearn.metrics import silhouette_score
 import os
 
 logger = logging.getLogger(__name__)
@@ -63,8 +64,25 @@ def scrape_and_process():
             vectorizer = TfidfVectorizer(stop_words='english')
             X = vectorizer.fit_transform(descriptions)
 
-            num_clusters = 5
-            kmeans = KMeans(n_clusters=num_clusters, random_state=42)
+            # Silhouette Analysis ile en iyi küme sayısını bulma
+            range_n_clusters = range(2, 10)
+            silhouette_scores = []
+            best_n_clusters = 2
+            best_score = -1
+
+            for n_clusters in range_n_clusters:
+                kmeans = KMeans(n_clusters=n_clusters, random_state=42)
+                cluster_labels = kmeans.fit_predict(X)
+                silhouette_avg = silhouette_score(X, cluster_labels)
+                silhouette_scores.append(silhouette_avg)
+
+                if silhouette_avg > best_score:
+                    best_score = silhouette_avg
+                    best_n_clusters = n_clusters
+
+            logger.info(f"Best number of clusters by Silhouette Score: {best_n_clusters}")
+
+            kmeans = KMeans(n_clusters=best_n_clusters, random_state=42)
             kmeans.fit(X)
             clusters = kmeans.labels_.tolist()
 
