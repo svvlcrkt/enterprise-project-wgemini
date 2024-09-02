@@ -87,7 +87,7 @@ def scrape_and_process():
             clusters = kmeans.labels_.tolist()
 
             cluster_summaries = []
-            for cluster_idx in range(num_clusters):
+            for cluster_idx in range(best_n_clusters):
                 cluster_items = [enterprise_data[i] for i in range(len(enterprise_data)) if clusters[i] == cluster_idx]
                 cluster_descriptions = " ".join([item['description'] for item in cluster_items])
                 
